@@ -1,0 +1,13 @@
+#!/bin/bash
+
+FILE="$1results"
+
+while true; do
+	curl -d "yahooac=$1" www.blockstatus.com/yahoo/status-checker > $FILE 2> /dev/null
+	(grep -q 'Status:</b> Online' $FILE && zenity --info --text="$1 ONline") ||
+#		(grep -q 'Status:</b> Offline' $FILE && echo "$1 OFFline") ||
+		(grep -q 'Error' $FILE && zenity --info --text="Script detected")
+
+	rm -f $FILE
+	sleep $(($RANDOM % 300 + 400)) 
+done
