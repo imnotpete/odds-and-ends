@@ -1,0 +1,15 @@
+#! /bin/bash
+
+if [ $# -ne 2 ] ; then
+	echo "usage: bloopbackup <userNumber> <latestEntryNumber>"
+fi
+
+echo "http://www.bloopdiary.com/viewfront.php?id=$1" >> tmpInput
+
+for ((i=0;i<=$2;i+=1)); do
+	echo "http://www.bloopdiary.com/viewentry.php?id=$1&num=$i">> tmpInput
+done
+
+wget --convert-links --html-extension --input-file tmpInput
+
+rm tmpInput 
