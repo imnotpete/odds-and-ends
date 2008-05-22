@@ -1,15 +1,18 @@
 #! /bin/bash
 
-if [ $# -ne 2 ] ; then
-	echo "usage: bloopbackup <userNumber> <latestEntryNumber>"
+if [ $# -ne 4 ] ; then
+	echo "usage: bloopbackup <userNumber> <latestEntryNumber> <username> <password>"
+	exit 1
 fi
 
 echo "http://www.bloopdiary.com/viewfront.php?id=$1" >> tmpInput
 
-for ((i=0;i<=$2;i+=1)); do
+for ((i=1;i<=$2;i+=1)); do
 	echo "http://www.bloopdiary.com/viewentry.php?id=$1&num=$i">> tmpInput
 done
+wget --save-cookies cookies.txt --post-data "username=$3&password=$4" http://www.bloopdiary.com/login.php -O -
+wget --load-cookies cookies.txt --convert-links --html-extension --input-file tmpInput 
 
-wget --convert-links --html-extension --input-file tmpInput
+rm tmpInput cookies.txt
 
-rm tmpInput 
+#grep "It may have been deleted by the user, or privatised." * --files-with-matches | xargs grep -v comments --files-with-matches | xargs rm
