@@ -7,14 +7,14 @@ import SocketServer
 # minimal web server.  serves files relative to the
 # current directory.
 
-PORT = 8100
+port = 8100
 
 if len(sys.argv) == 2:
-        PORT = int(sys.argv[1])
+        port = int(sys.argv[1])
 
-Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
+handler = SimpleHTTPServer.SimpleHTTPRequestHandler
 
-httpd = SocketServer.TCPServer(("", PORT), Handler)
+httpd = SocketServer.TCPServer(("", port), handler)
 
-print "serving at port", PORT
+print "serving at port", port
 httpd.serve_forever()
