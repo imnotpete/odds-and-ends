@@ -33,3 +33,7 @@ alias bup='source ~/.bashrc'
 alias vib='vi ~/git/odds-and-ends/dotfiles/bashrc && bup'
 
 alias findi='find . -iname'
+
+alias cd..='cd ..'
+alias la='ls -a'
+alias ll='la -l'
