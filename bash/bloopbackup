@@ -10,6 +10,7 @@ echo "http://www.bloopdiary.com/viewfront.php?id=$1" >> tmpInput
 for ((i=1;i<=$2;i+=1)); do
 	echo "http://www.bloopdiary.com/viewentry.php?id=$1&num=$i">> tmpInput
 done
+
 wget --save-cookies cookies.txt --post-data "username=$3&password=$4" http://www.bloopdiary.com/login.php -O -
 wget --load-cookies cookies.txt --convert-links --html-extension --input-file tmpInput 
 

@@ -13,6 +13,9 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+export PATH=$PATH:"~/git/odds-and-ends/python"
+export EDITOR='vi'
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -23,12 +26,16 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-alias mci='mvn clean install'
-alias mcis='mci -DskipTests'
-alias mrun='mvn clean spring-boot:run'
-
 alias bup='source ~/.bashrc'
 alias vib='vi ~/git/odds-and-ends/dotfiles/bashrc && bup'
 
 alias findi='find . -iname'
 alias psgrep='ps aux | grep'
+
+alias cd..='cd ..'
+alias la='ls -a'
+alias ll='la -l'
+
+alias mci='mvn clean install'
+alias mcis='mci -DskipTests'
+alias mrun='mvn clean spring-boot:run'
