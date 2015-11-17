@@ -25,8 +25,10 @@ fi
 
 alias mci='mvn clean install'
 alias mcis='mci -DskipTests'
+alias mrun='mvn clean spring-boot:run'
 
 alias bup='source ~/.bashrc'
 alias vib='vi ~/git/odds-and-ends/dotfiles/bashrc && bup'
 
 alias findi='find . -iname'
+alias psgrep='ps aux | grep'
