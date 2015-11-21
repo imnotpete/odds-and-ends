@@ -1,3 +1,6 @@
 set autoindent
 set number
 syntax on
+
+nmap  :tabn
+nmap  :tabp
