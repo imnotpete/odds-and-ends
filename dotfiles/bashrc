@@ -15,6 +15,7 @@ shopt -s checkwinsize
 
 export PATH=$PATH:"~/git/odds-and-ends/python"
 export EDITOR='vi'
+export DISPLAY=:0.0
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
