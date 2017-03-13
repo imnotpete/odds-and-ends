@@ -34,6 +34,7 @@ alias findi='find . -iname'
 alias psgrep='ps aux | grep'
 
 alias cd..='cd ..'
+alias cd-='cd -'
 alias la='ls -a'
 alias ll='la -lh'
 alias vi='vi -p'
