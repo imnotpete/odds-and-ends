@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 # test if getopt is enhanced version
 getopt --test > /dev/null
@@ -56,5 +56,5 @@ path=$basePath/characterBackups/$(date -Idate)
 mkdir -p $path 
 
 for i in $(http $url | jq -r '.[].id'); do
-	http $url > $path/$i
+	http $url/$i > $path/$i
 done
