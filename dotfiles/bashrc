@@ -40,4 +40,5 @@ alias vi='vi -p'
 
 alias mci='mvn clean install'
 alias mcis='mci -DskipTests'
-alias mrun='reset && mvn clean spring-boot:run'
+alias mrun='reset && mvn spring-boot:run'
+
