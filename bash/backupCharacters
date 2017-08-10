@@ -2,19 +2,19 @@
 
 # test if getopt is enhanced version
 getopt --test > /dev/null
-if [ $? -ne 4 ]; then
+if [[ $? -ne 4 ]]; then
     echo "I’m sorry, `getopt --test` failed in this environment."
     exit 1
 fi
 
-OPTIONS=u::p::
-LONGOPTIONS=url,path
+OPTIONS=u:p:
+LONGOPTIONS=url:,path:
 
 # -temporarily store output to be able to check for errors
 # -activate advanced mode getopt quoting e.g. via “--options”
 # -pass arguments only via   -- "$@"   to separate them correctly
 PARSED=$(getopt --options=$OPTIONS --longoptions=$LONGOPTIONS --name "$0" -- "$@")
-if [ $? -ne 0 ]; then
+if [[ $? -ne 0 ]]; then
     # e.g. $? == 1
     #  then getopt has complained about wrong arguments to stdout
     exit 2
@@ -27,16 +27,15 @@ baseUrl=localhost:8080
 basePath=~
 
 # now enjoy the options in order and nicely split until we see --
-echo [$1]
 while true; do
     case "$1" in
         -u|--url)
             baseUrl=$2
-            shift
+            shift 2
             ;;
         -p|--path)
             basePath=$2
-            shift
+            shift 2
             ;;
         --)
             shift
@@ -50,11 +49,12 @@ while true; do
 done
 
 echo Getting characters from $baseUrl and saving them to $basePath
-exit
+
+url=$baseUrl/api/characters
 path=$basePath/characterBackups/$(date -Idate)
 
 mkdir -p $path 
 
-for i in $(http $baseUrl/api/characters | jq -r '.[].id'); do
-	http $baseUrl/api/characters/$i > $path/$i
+for i in $(http $url | jq -r '.[].id'); do
+	http $url > $path/$i
 done
