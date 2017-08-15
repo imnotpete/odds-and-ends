@@ -1,0 +1,3 @@
+#! /bin/bash
+
+http charsheet.imnotpete.com/api/characters &> /home/sam/httpError
