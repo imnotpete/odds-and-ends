@@ -16,6 +16,3 @@ This is just a collection of scripts and snippits I've accumulated and would rat
 
 ### python
 **servethis:** a simple httpserver that can be run on-demand from any arbitrary directory
-
-### qmk-keymaps
-keymaps for the QMK keyboard firmware
