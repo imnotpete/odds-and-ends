@@ -1,4 +1,4 @@
-This is just a collection of scripts and snippits I've accumulated and would rather not lose.
+This is just a collection of scripts and snippets I've accumulated and would rather not lose.
 
 ## Catalog:
 
