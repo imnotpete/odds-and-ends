@@ -2,6 +2,9 @@ This is just a collection of scripts and snippits I've accumulated and would rat
 
 ## Catalog:
 
+### arduino
+**2key:** firmware for a 2key macropad keyboard that prints binary (1 or 0 on tapping, space or backspace on hold); cribbed from [this six key sketch](https://github.com/theimmc/six-key-pad)
+
 ### bash
 **backupCharacters:** a script to backup character sheets from my [D&D character builder](https://github.com/imnotpete/characterbuilder)
 
