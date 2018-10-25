@@ -13,7 +13,7 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-export PATH=$PATH:"~/git/odds-and-ends/python"
+export PATH=$PATH:"~/git/odds-and-ends/python":$JAVA_HOME"/bin":"C:\Program Files (x86)\GnuWin32\bin"
 export EDITOR='vi'
 export DISPLAY=:0.0
 
@@ -33,11 +33,24 @@ alias vib='vi ~/git/odds-and-ends/dotfiles/bashrc && bup'
 alias findi='find . -iname'
 alias psgrep='ps aux | grep'
 
+
 alias cd..='cd ..'
+alias cd-='cd -'
 alias la='ls -a'
 alias ll='la -lh'
 alias vi='vi -p'
 
 alias mci='mvn clean install'
 alias mcis='mci -DskipTests'
-alias mrun='reset && mvn clean spring-boot:run'
+alias mrun='reset && mvn spring-boot:run'
+alias mwebdeploy='mvn com.oracle.weblogic:weblogic-maven-plugin:redeploy'
+
+alias gmerge='git merge -s recursive -X renormalize'
+
+function vigrep {
+	grep -ril $1 | sed 's/ /\\ /g'
+	vi `grep -ril $1 | sed 's/ /\\ /g'`
+}
+
+# keep another bashrc in home directory for secret things that shouldn't/can't be committed
+test -f ~/.bashrc.custom && . ~/.bashrc.custom
