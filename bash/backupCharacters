@@ -3,7 +3,7 @@
 # test if getopt is enhanced version
 getopt --test > /dev/null
 if [[ $? -ne 4 ]]; then
-    echo "I’m sorry, `getopt --test` failed in this environment."
+    echo "I’m sorry, 'getopt --test' failed in this environment."
     exit 1
 fi
 
@@ -48,13 +48,13 @@ while true; do
     esac
 done
 
-echo Getting characters from $baseUrl and saving them to $basePath
+echo Getting characters from "$baseUrl" and saving them to "$basePath"
 
 url=$baseUrl/api/characters
 path=$basePath/characterBackups/$(date -Idate)
 
-mkdir -p $path 
+mkdir -p "$path"
 
-for i in $(http $url | jq -r '.[].id'); do
-	http $url/$i > $path/$i
+for i in $(http "$url" | jq -r '.[].id'); do
+	http "$url/$i" > "$path/$i"
 done
