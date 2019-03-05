@@ -59,10 +59,16 @@ alias stashlist='git stash list'
 alias stash='git stash save -u'
 alias unstash='git stash pop'
 alias tree="mvn dependency:tree | vi -"
+alias odds="cd ~/git/odds-and-ends"
 
 function vigrep {
 	grep -ril $1 | sed 's/ /\\ /g'
 	vi `grep -ril $1 | sed 's/ /\\ /g'`
+}
+
+function vifind {
+	find . -iname $1
+	vi `find . -iname $1`
 }
 
 # keep another bashrc in home directory for secret things that shouldn't/can't be committed
