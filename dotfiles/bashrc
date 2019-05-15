@@ -36,8 +36,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-alias bup='source ~/.bashrc && source ~/.bash_profile'
-alias vib='vi ~/git/odds-and-ends/dotfiles/bashrc ~/.bashrc && bup'
+alias bup='source ~/.bashrc && test -f ~/.bash_profile && source ~/.bash_profile'
+alias vib='vi ~/git/odds-and-ends/dotfiles/bashrc ~/.bashrc ~/.bashrc.custom && bup'
 
 alias findi='find . -iname'
 alias psgrep='ps aux | grep'
