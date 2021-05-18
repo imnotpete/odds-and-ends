@@ -60,6 +60,9 @@ alias stash='git stash save -u'
 alias unstash='git stash pop'
 alias tree="mvn dependency:tree | vi -"
 alias odds="cd ~/git/odds-and-ends"
+alias mkdir="mkdir -p"
+alias up="docker compose up -d"
+alias down="docker compose down"
 
 function vigrep {
 	grep -ril $1 | sed 's/ /\\ /g'
