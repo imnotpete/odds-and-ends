@@ -65,7 +65,7 @@ alias up="docker compose up --build -d"
 alias down="docker compose down"
 alias bounce="down && up"
 
-alias hosts="grep host ~/.ssh/config | awk '{printf \"%s \", \$2}'"
+alias hosts="grep host ~/.ssh/config | awk '{printf \"%s \", \$2}'; echo"
 
 function vigrep {
 	grep -ril $1 | sed 's/ /\\ /g'
