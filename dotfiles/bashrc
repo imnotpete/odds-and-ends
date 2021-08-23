@@ -24,7 +24,7 @@ export PATH=$PATH:"~/git/odds-and-ends/python":$JAVA_HOME"/bin":"C:\Program File
 export EDITOR='vi'
 export DISPLAY=:0.0
 export PS1="\[\033]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\007\]\n\[\033[32m\]\u@\h \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]\$(__git_ps1)\[\033[0m\]"$'\n$ '
-export BASHRC="$HOME/git/odds-and-ends/dotfiles/bashrc"
+export BASHRC="~/git/odds-and-ends/dotfiles/bashrc"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -61,8 +61,11 @@ alias unstash='git stash pop'
 alias tree="mvn dependency:tree | vi -"
 alias odds="cd ~/git/odds-and-ends"
 alias mkdir="mkdir -p"
-alias up="docker compose up -d"
+alias up="docker compose up --build -d"
 alias down="docker compose down"
+alias bounce="down && up"
+
+alias hosts="grep host ~/.ssh/config | awk '{printf \"%s \", \$2}'"
 
 function vigrep {
 	grep -ril $1 | sed 's/ /\\ /g'
