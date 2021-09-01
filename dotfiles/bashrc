@@ -66,6 +66,8 @@ alias down="docker compose down"
 alias bounce="down && up"
 
 alias hosts="grep host ~/.ssh/config | awk '{printf \"%s \", \$2}'; echo"
+alias weather="curl -s https://wttr.in"
+
 
 function vigrep {
 	grep -ril $1 | sed 's/ /\\ /g'
