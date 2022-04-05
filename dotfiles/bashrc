@@ -23,8 +23,10 @@ shopt -s checkwinsize
 export PATH=$PATH:"~/git/odds-and-ends/python":$JAVA_HOME"/bin":"C:\Program Files (x86)\GnuWin32\bin"
 export EDITOR='vi'
 export DISPLAY=:0.0
+export PROMPT_COMMAND="printf '\n'"
 #export PS1="\[\033]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\007\]\n\[\033[32m\]\u@\h \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]\$(__git_ps1)\[\033[0m\]"$'\n$ '
-export PS1="\[\e]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\007\]\n\[\e[32m\]\u@\h \[\e[35m\]$MSYSTEM \[\e[33m\]\w\[\e[36m\]\$(__git_ps1)\[\e[0m\]"$'\n$ '
+#export PS1="\[\e]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\007\]\n\[\e[32m\]\u@\h \[\e[35m\]$MSYSTEM \[\e[33m\]\w\[\e[36m\]\$(__git_ps1)\[\e[0m\]"$'\n$ '
+export PS1="\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[36m\]\$(__git_ps1)\[\e[0m\]"$'\n$ '
 export BASHRC="~/git/odds-and-ends/dotfiles/bashrc"
 
 # enable color support of ls and also add handy aliases
