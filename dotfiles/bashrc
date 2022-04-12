@@ -42,7 +42,7 @@ alias vib='vi ~/git/odds-and-ends/dotfiles/bashrc ~/.bashrc ~/.bashrc.custom && 
 
 alias findi='find . -iname'
 alias psgrep='ps aux | grep'
-
+alias grepr='grep -ril'
 
 alias cd..='cd ..'
 alias cd-='cd -'
