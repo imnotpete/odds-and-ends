@@ -20,12 +20,12 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-export PATH=$PATH:"~/git/odds-and-ends/python":$JAVA_HOME"/bin":"C:\Program Files (x86)\GnuWin32\bin"
+export PATH=$PATH:"~/dev/odds-and-ends/python":$JAVA_HOME"/bin":"C:\Program Files (x86)\GnuWin32\bin"
 export EDITOR='vi'
 export DISPLAY=:0.0
 export PROMPT_COMMAND="printf '\n'"
 export PS1="\[\e[01;32m\]\u@\h \[\e[01;34m\]\w\[\e[36m\]\$(__git_ps1)\[\e[0m\]"$'\n$ '
-export BASHRC="~/git/odds-and-ends/dotfiles/bashrc"
+export BASHRC="~/dev/odds-and-ends/dotfiles/bashrc"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -38,7 +38,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 alias bup='source ~/.bashrc && test -f ~/.bash_profile && source ~/.bash_profile'
-alias vib='vi ~/git/odds-and-ends/dotfiles/bashrc ~/.bashrc ~/.bashrc.custom && bup'
+alias vib='vi ~/dev/odds-and-ends/dotfiles/bashrc ~/.bashrc ~/.bashrc.custom && bup'
 
 alias findi='find . -iname'
 alias psgrep='ps aux | grep'
@@ -60,13 +60,13 @@ alias stashlist='git stash list'
 alias stash='git stash save -u'
 alias unstash='git stash pop'
 alias tree="mvn dependency:tree | vi -"
-alias odds="cd ~/git/odds-and-ends"
+alias odds="cd ~/dev/odds-and-ends"
 alias mkdir="mkdir -p"
 alias up="docker compose up --build -d"
 alias down="docker compose down"
 alias bounce="down && up"
 alias weather="curl -s https://wttr.in"
-alias hosts="grep host ~/.ssh/config | awk '{printf \"%s \", \$2}'; echo"
+alias hosts="grep host ~/.ssh/config | awk '{for (i=2; i<=NF; i++) printf \"%s \", \$i}'; echo"
 alias hostsl="cat ~/.ssh/config"
 
 function findgrep {
