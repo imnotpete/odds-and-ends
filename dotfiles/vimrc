@@ -1,7 +1,11 @@
+set ignorecase
+set smartcase
 set autoindent
 set number
+set hlsearch
 set tabstop=4
 set shiftwidth=4
+set nowrap
 syntax on
 
 nmap  :tabn
