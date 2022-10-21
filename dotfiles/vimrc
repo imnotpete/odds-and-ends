@@ -1,6 +1,10 @@
 set autoindent
 set number
+set tabstop=4
+set shiftwidth=4
 syntax on
 
 nmap  :tabn
 nmap  :tabp
+
+filetype plugin indent on
