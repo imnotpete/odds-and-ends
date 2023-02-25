@@ -10,3 +10,5 @@ syntax on
 
 nmap  :tabn
 nmap  :tabp
+
+filetype plugin indent on
