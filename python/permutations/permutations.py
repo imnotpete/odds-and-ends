@@ -23,7 +23,7 @@
 
 plist = list()
 permutations = set()
-totals = set()
+totals = dict()
 
 def generate(k: int, A:list):
     if k == 1:
@@ -56,22 +56,28 @@ def get_totals():
         t = [a, b, c, d, e, f]
         t = sorted(t, reverse = True)
         # t.append(perm)
-        totals.add(tuple(t))
-        # totals[tuple(t)] = perm
-
+        # totals.add(tuple(t))
+        totals[tuple(t)] = perm
 
 A = [6, 5, 5, 4, 3, 2, 2, 2, 1]
 generate(len(A), A)
 
 get_totals()
 
-totals = sorted(totals, reverse=True)
+keys = [k for k in totals]
+keys = sorted(keys, reverse=True)
 
 print(f"Total permutations: {len(plist)}")
 print(f"Unique permutations: {len(permutations)}")
 print(f"Unique totals, sorted ({len(totals)})")
 # print('\n'.join(str(s) for s in totals))
-# print('\n'.join(f"{str(k)} {str(totals[k])}" for k in totals))
-# for k in totals:
-#     print(k)
-#     print(totals.)
+# print('\n'.join(f"{str(k)} {str([v])}" for k in totals))
+keys = [key for key in keys if len([i for i in key if i >= 10])>= 4]
+
+for key in keys:
+
+    for k, v in totals.items():
+        if key == k:
+            print(f"{k}\t\t{v}")
+            # print(sum(key))
+            pass
