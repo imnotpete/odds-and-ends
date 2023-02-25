@@ -20,7 +20,7 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-export PATH=$PATH:"~/dev/odds-and-ends/python":$JAVA_HOME"/bin":"C:\Program Files (x86)\GnuWin32\bin"
+export PATH=$PATH:"~/dev/odds-and-ends/python":$JAVA_HOME"/bin":"C:\Program Files (x86)\GnuWin32\bin":"~/.cargo/bin"
 export EDITOR='vi'
 export DISPLAY=:0.0
 export PROMPT_COMMAND="printf '\n'"
